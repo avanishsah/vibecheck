@@ -47,3 +47,58 @@ MongoDB Atlas screenshot
 
 6. Get All Vibe Endlpoints
 ![image](https://github.com/user-attachments/assets/daf5006a-af55-439d-bb79-cd1da6b433c2)
+
+#Assignment 3
+
+1. New Project Structure
+Includes - models/Comment.js, routes/comments.js, utils/errorResponse.js, and middleware/error.js.
+Logs directory containing logs files
+![image](https://github.com/user-attachments/assets/ad7f4d57-75e0-4e48-95b7-af85321f961f)
+
+2. Like/Unlike Functionality
+Login as a user A(avanishkumar30)
+![image](https://github.com/user-attachments/assets/867b931f-121c-4679-9046-3947e75222b6)
+
+Posted a vibe and got vibe id
+![image](https://github.com/user-attachments/assets/e6b0a307-502d-483c-8753-09eed9b34b31)
+
+Login as user B(avanishkumar31)
+![image](https://github.com/user-attachments/assets/98f46930-8d56-4d9f-a4cb-01f01949a930)
+
+Made a PUT request and with user B 
+Vibe Liked
+![image](https://github.com/user-attachments/assets/e352a180-292b-4464-af7e-5186d71e6f15)
+
+Vibe Unliked
+![image](https://github.com/user-attachments/assets/50024f1a-fcb1-4945-baf6-bb4558d0e92a)
+
+Verification of Like removed
+![image](https://github.com/user-attachments/assets/3207bfe2-07a0-4f8f-bf19-1958d893fb56)
+
+3. Comments
+Comment created successfuly
+![image](https://github.com/user-attachments/assets/c1335deb-936c-4057-b3b4-0e1467e3bee8)
+
+Verification of the document in MongoDB Atlas
+![image](https://github.com/user-attachments/assets/48217380-d355-4da7-b77e-4cdb9623b835)
+
+GET Request to /api/v1/vibes/<VibeID>/comments to verify
+![image](https://github.com/user-attachments/assets/a3031f68-9643-438c-a19a-8f5822d448a1)
+
+4. Follow
+
+User A(avanishkumar30) follower User B(avanishkumar31)
+![image](https://github.com/user-attachments/assets/11071ba8-9a88-426e-9849-786d4e5d2835)
+
+MongoDB Atlas User A gets follwed by User B
+![image](https://github.com/user-attachments/assets/ad73d979-6784-4a48-81ea-9eb45d5dc373)
+
+![image](https://github.com/user-attachments/assets/296edb32-fb9f-425a-b02b-1c93cd4aba05)
+
+User B(avanishkumar31) posted vibe
+![image](https://github.com/user-attachments/assets/c06f2d92-2066-44c0-91b3-9c8da0d456f9)
+Atlas
+![image](https://github.com/user-attachments/assets/6e5e9174-34ac-44a0-aa1c-b6a93cf3d21a)
+
+User A(avanish30) request to the personalized feed endpoint
+
