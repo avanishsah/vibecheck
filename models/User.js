@@ -16,6 +16,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  following: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
   date: {
     type: Date,
     default: Date.now

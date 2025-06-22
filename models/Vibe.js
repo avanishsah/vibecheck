@@ -11,9 +11,13 @@ const VibeSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // This references the User model
+    ref: 'User', 
     required: true
   },
+  likes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
   date: {
     type: Date,
     default: Date.now

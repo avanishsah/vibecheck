@@ -5,8 +5,6 @@ const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
 
-// @route   POST api/v1/auth/signup
-// @desc    Register user
 router.post(
   '/signup',
   [
@@ -59,8 +57,6 @@ router.post(
   }
 );
 
-// @route   POST api/v1/auth/login
-// @desc    Authenticate user & get token
 router.post(
   '/login',
   [
