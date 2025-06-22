@@ -4,11 +4,8 @@ const auth = require('../middleware/auth');
 const User = require('../models/User');
 const Vibe= require("../models/Vibe");
 
-// @route   POST api/v1/users/:userId/follow
-// @desc    Follow a user
 router.post('/:userId/follow', auth, async (req, res) => {
   try {
-    // Check if user is trying to follow themselves
     if (req.params.userId === req.user.id) {
       return res.status(400).json({ msg: 'You cannot follow yourself' });
     }
@@ -20,16 +17,13 @@ router.post('/:userId/follow', auth, async (req, res) => {
       return res.status(404).json({ msg: 'User not found' });
     }
 
-    // Check if already following
     if (currentUser.following.includes(req.params.userId)) {
       return res.status(400).json({ msg: 'Already following this user' });
     }
 
-    // Add to following list
     currentUser.following.push(req.params.userId);
     await currentUser.save();
 
-    // Add to followers list
     userToFollow.followers.push(req.user.id);
     await userToFollow.save();
 
@@ -40,11 +34,8 @@ router.post('/:userId/follow', auth, async (req, res) => {
   }
 });
 
-// @route   GET api/v1/feed
-// @desc    Get personalized feed
 router.get('/feed', auth, async (req, res) => {
   try {
-    // Get user with following list
     console.log("Inside feed");
     const user = await User.findById(req.user.id).select('following');
     

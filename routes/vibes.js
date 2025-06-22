@@ -8,27 +8,20 @@ const Vibe = require('../models/Vibe');
 const { protect } = require('../middleware/auth');
 
 
-
-// @route   GET /api/v1/vibes
-// @desc    Get paginated vibes
 router.get('/', async (req, res) => {
   try {
-    // Parse pagination parameters with defaults
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    // Get total count of vibes
     const totalVibes = await Vibe.countDocuments();
 
-    // Get paginated results
     const vibes = await Vibe.find()
       .populate('user', 'username _id')
-      .sort({ date: -1 }) // Newest first
+      .sort({ date: -1 }) 
       .skip(skip)
       .limit(limit);
 
-    // Calculate pagination metadata
     const pagination = {
       currentPage: page,
       itemsPerPage: limit,
@@ -36,7 +29,6 @@ router.get('/', async (req, res) => {
       totalPages: Math.ceil(totalVibes / limit)
     };
 
-    // Add next/prev page links if they exist
     if (page < pagination.totalPages) {
       pagination.next = {
         page: page + 1,
@@ -69,7 +61,6 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    // Check if ID is valid MongoDB ID format (24 hex characters)
     if (!/^[0-9a-fA-F]{24}$/.test(req.params.id)) {
       return res.status(400).json({
         success: false,
@@ -94,12 +85,10 @@ router.get('/:id', async (req, res, next) => {
       data: vibe
     });
   } catch (err) {
-    next(err); // Pass to error handler middleware
+    next(err); 
   }
 });
 
-// @route   POST api/v1/vibes
-// @desc    Create a vibe
 router.post(
   '/',
   [
@@ -133,8 +122,6 @@ router.post(
   }
 );
 
-// @route   PUT api/v1/vibes/:id/like
-// @desc    Like/unlike a vibe
 router.put('/:id/like', auth, async (req, res) => {
   try {
     const vibe = await Vibe.findById(req.params.id);
@@ -142,16 +129,13 @@ router.put('/:id/like', auth, async (req, res) => {
       return res.status(404).json({ msg: 'Vibe not found' });
     }
 
-    // Check if the vibe has already been liked
     if (vibe.likes.includes(req.user.id)) {
-      // Unlike
       const index = vibe.likes.indexOf(req.user.id);
       vibe.likes.splice(index, 1);
       await vibe.save();
       return res.json({ msg: 'Vibe unliked successfully' });
     }
 
-    // Like
     vibe.likes.push(req.user.id);
     await vibe.save();
     res.json({ msg: 'Vibe liked successfully' });
@@ -161,19 +145,14 @@ router.put('/:id/like', auth, async (req, res) => {
   }
 });
 
-// @desc    Delete a vibe
-// @route   DELETE /api/v1/vibes/:id
-// @access  Private
 router.delete('/:id', auth, async (req, res) => {
   try {
     const vibe = await Vibe.findById(req.params.id);
     
-    // Check if vibe exists
     if (!vibe) {
       return res.status(404).json({ msg: 'Vibe not found' });
     }
 
-    // Authorization check - compare vibe's user ID with logged-in user ID
     if (vibe.user.toString() !== req.user.id) {
       return res.status(403).json({ 
         success: false,

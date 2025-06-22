@@ -10,17 +10,12 @@ const feedRoutes = require('./routes/feed');
 const winston = require('winston');
 const path = require('path');
 
-// Create Express app
 const app = express();
 
-
-// Init Middleware
 app.use(express.json());
 
-// Connect Database
 connectDB();
 
-// Configure logger
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
@@ -31,7 +26,6 @@ const logger = winston.createLogger({
 
 app.use('/api/v1/feed',feedRoutes);
 
-// Log requests middleware
 app.use((req, res, next) => {
   logger.info({
     timestamp: new Date().toISOString(),
@@ -44,24 +38,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// Define Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/vibes', vibeRoutes);
-app.use('/api/v1/vibes', commentRoutes); // Comments routes
-app.use('/api/v1/users', userRoutes); // User follow/unfollow routes
+app.use('/api/v1/vibes', commentRoutes); 
+app.use('/api/v1/users', userRoutes); 
 
-// Root endpoint
 app.get('/', (req, res) => {
   res.set('Content-Type', 'text/html');
   res.send('<h1>Welcome to VibeCheck API!</h1><p>Check out our vibes at /api/v1/vibes</p>');
 });
 
-// Error handler middleware (must be after routes)
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-// SERVER
 app.listen(PORT, () => {
   console.log(`🚀 Server blasting off on port ${PORT}`);
 });

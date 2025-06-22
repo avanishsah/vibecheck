@@ -1,7 +1,6 @@
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, json } = format;
 
-// Configure logger
 const logger = createLogger({
   level: 'info',
   format: combine(
@@ -14,7 +13,6 @@ const logger = createLogger({
 });
 
 const errorHandler = (err, req, res, next) => {
-  // Log the error
   logger.error({
     timestamp: new Date(),
     method: req.method,
@@ -28,7 +26,6 @@ const errorHandler = (err, req, res, next) => {
     query: req.query
   });
 
-  // Handle specific error types
   if (err.name === 'CastError') {
     return res.status(400).json({
       success: false,
@@ -37,7 +34,6 @@ const errorHandler = (err, req, res, next) => {
     });
   }
 
-  // Default error response
   res.status(500).json({
     success: false,
     error: 'Server Error'

@@ -1,7 +1,6 @@
 // middleware/auth.js
 const jwt = require('jsonwebtoken');
 module.exports = async function(req, res, next) {
- // Get token from Authorization header (Bearer <token>)
  const authHeader = req.header('Authorization');
  let token;
  if (authHeader && authHeader.startsWith('Bearer ')) {

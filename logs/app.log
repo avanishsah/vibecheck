@@ -152,3 +152,10 @@
 {"level":"info","message":{"method":"DELETE","params":{},"query":{},"timestamp":"2025-06-22T18:45:06.990Z","url":"/api/v1/vibes/68584d131c44c7ebaad3f4dd"}}
 {"level":"info","message":{"method":"DELETE","params":{},"query":{},"timestamp":"2025-06-22T19:18:03.896Z","url":"/api/v1/vibes/68584d131c44c7ebaad3f4dd"}}
 {"level":"info","message":{"method":"GET","params":{},"query":{},"timestamp":"2025-06-22T19:35:19.976Z","url":"/api/v1/vibes/123"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{},"timestamp":"2025-06-22T19:45:24.480Z","url":"/api/v1/vibes"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{"limit":"2"},"timestamp":"2025-06-22T19:46:37.815Z","url":"/api/v1/vibes?limit=2"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{"limit":"2","page":"2"},"timestamp":"2025-06-22T19:52:13.943Z","url":"/api/v1/vibes?limit=2&page=2"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{"limit":"2"},"timestamp":"2025-06-22T19:52:59.427Z","url":"/api/v1/vibes?limit=2"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{"limit":"2"},"timestamp":"2025-06-22T19:54:15.090Z","url":"/api/v1/vibes?limit=2"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{},"timestamp":"2025-06-22T19:54:27.816Z","url":"/api/v1/vibes/123"}}
+{"level":"info","message":{"method":"GET","params":{},"query":{"limit":"2","page":"2"},"timestamp":"2025-06-22T19:55:03.848Z","url":"/api/v1/vibes?limit=2&page=2"}}

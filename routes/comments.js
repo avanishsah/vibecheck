@@ -5,8 +5,6 @@ const auth = require('../middleware/auth');
 const Vibe = require('../models/Vibe');
 const Comment = require('../models/Comment');
 
-// @route   POST api/v1/vibes/:vibeId/comments
-// @desc    Add comment to a vibe
 router.post(
   '/:vibeId/comments',
   [
