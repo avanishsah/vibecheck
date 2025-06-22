@@ -100,5 +100,35 @@ User B(avanishkumar31) posted vibe
 Atlas
 ![image](https://github.com/user-attachments/assets/6e5e9174-34ac-44a0-aa1c-b6a93cf3d21a)
 
-User A(avanish30) request to the personalized feed endpoint
+4.Personalized feed
+![image](https://github.com/user-attachments/assets/fbc603af-5b08-450c-85dc-a721559d1824)
+
+
+5.Authorization 
+Deleting vibe by diffrent User
+![image](https://github.com/user-attachments/assets/11818a4f-4a9b-47f8-acc9-6a36168b488b)
+
+Deleting a vibe by same user
+![image](https://github.com/user-attachments/assets/22dbc589-dee9-40f1-8327-f4af96cafa0b)
+
+6.Global Error Handler & Logging
+Get Request to inalid mongoDB format
+![image](https://github.com/user-attachments/assets/48805001-404a-4b2d-b90d-3b3071fe7e1a)
+
+logs
+![image](https://github.com/user-attachments/assets/2008b693-96af-4476-a358-9164ed1b51e7)
+
+7.Pagination
+GET request to /api/v1/vibes?limit=2
+![image](https://github.com/user-attachments/assets/9914c7e4-f549-4c3a-acaa-3bd095f8ee67)
+
+GET request to /api/v1/vibes?limit=2&page=2
+![image](https://github.com/user-attachments/assets/1b5d5bed-0af0-4ba0-8610-2523894c6050)
+
+
+
+
+
+
+
 
