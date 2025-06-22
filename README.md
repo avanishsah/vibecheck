@@ -1,36 +1,31 @@
 # Assignment 1
-1. Project Structure - folder - vibe check and inside package.json and server.js
-2. Serevr is running 
-![image](https://github.com/user-attachments/assets/90fc43cd-93d4-4182-aa18-07683ed6d652)
-
-3. Root Endpoint
+ Root Endpoint
 ![image](https://github.com/user-attachments/assets/132ce406-681a-4425-8f83-5bec8c2618a1)
 
-4. Get all vibes
+Get all vibes
 ![image](https://github.com/user-attachments/assets/ca3fd28a-e6d3-44aa-a7c9-bdd786fe1d68)
 
-5. Get Single Vibe - Success
+Get Single Vibe - Success
 ![image](https://github.com/user-attachments/assets/6aa0e7bf-26c1-4295-9ef1-6a626f6d2dd6)
 
-# Get Single Vibe - failure
+Get Single Vibe - failure
 ![image](https://github.com/user-attachments/assets/311660ac-6375-45f5-9efc-efd247c1b1b2)
 
 # Assignment 2
-1.
-.env file not commited to git with usage of .gitignore
-All new foders: config, models, routes, middleware
-All files inside required: config/db.js, models/User.js, models/Vibe.js, routes/auth.js, routes/vibes.js, middleware/auth.js
+
+
+Signup
 
 ![image](https://github.com/user-attachments/assets/c24dbf47-2640-45ff-9159-e6d33297f3e8)
 
-3. Signup
+MongoDB Atlas
 ![image](https://github.com/user-attachments/assets/1b739316-ddb6-4d40-a1b2-c1970443e969)
 
-MongoDB Atlas
+User login sucess
 ![image](https://github.com/user-attachments/assets/252c1c8a-194c-4957-b906-408fc9304f30)
 
 
-4. User login sucess
+Trying to login with wrong passwor
 ![image](https://github.com/user-attachments/assets/a3f01172-ebdd-43d9-a32a-6cf88ea6a724)
 
 
