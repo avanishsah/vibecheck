@@ -21,11 +21,8 @@ Signup
 MongoDB Atlas
 ![image](https://github.com/user-attachments/assets/1b739316-ddb6-4d40-a1b2-c1970443e969)
 
+
 User login sucess
-![image](https://github.com/user-attachments/assets/252c1c8a-194c-4957-b906-408fc9304f30)
-
-
-Trying to login with wrong passwor
 ![image](https://github.com/user-attachments/assets/a3f01172-ebdd-43d9-a32a-6cf88ea6a724)
 
 
